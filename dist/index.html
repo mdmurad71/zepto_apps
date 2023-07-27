@@ -4,51 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css" />
+
     <title>Document</title>
 </head>
 <body class="">
 
 
-    <div class="p-6 grid  grid-cols-2 gap-4 mt-3">
-
-    <div class="p-3 w-full h-[550px]  bg-gray-200 rounded-xl shadow-lg   space-x-1">
+    <div class="p-3 grid  grid-cols-2 gap-4 mt-1">
+<!--button start here-->
+    <div class="p-3 w-full h-[600px]  bg-gray-200 rounded-xl shadow-lg   space-x-1">
             <div  class="m-0  h-12 flex justify-center">
                 <button class="w-full h-12 rounded-none bg-white">Components</button>
         
             </div>
-            <div class="w-full grid grid-rows-1 grid-cols-3 mt-[100px]">
+            <div class="w-full grid grid-rows-1 grid-cols-3 mt-2">
                 <div class="m-0 h-8 p-1">
-                    <button class="w-full h-12 rounded-none bg-yellow-200">Save Changes</button>
+                    <button class="w-full h-12 rounded-none bg-yellow-200">Heading</button>
 
                 </div>
                 <div class="m-0 h-8 p-1">
-                    <button class="w-full h-12 rounded-none bg-green-400">Save Changes</button>
+                    <button class="w-full h-12 rounded-none bg-green-400">Image</button>
 
                 </div>
                 <div class="m-0 h-8 p-1">
-                    <button class="w-full h-12 rounded-none bg-green-100 text-blue-400">Save Changes</button>
+                    <button class="w-full h-12 rounded-none bg-green-100 text-blue-400">Description</button>
   
                 </div>
 
             </div>
-            <form class="mx-auto py-3 max-w-3xl my-5">
-                <div>
+
+            <!-- button end -->
+
+
+            <!--form start here-->
+
+            <form class="mx-auto py-3 max-w-3xl my-3">
+                <div class="border-2 border-indigo-400" >
+                    <div class="border-spacing-1 outline-4 flex justify-end">
+                        <svg class="w-6 h-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          </div>
+                          
+                   
                 <label for="items">Items</label>
                 <input class="border border-gray-300 block py-2 w-full" type="text" name="items" id="items"/>
+            <!-- </div> -->
             </div>
+
+<div>
+            <div class="max-w-1xl mx-auto mt-3">
+                <div class="flex items-t jusify-center w-full">
+                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-44 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                            <svg class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                        </div>
+                        <input id="dropzone-file" type="file" class="hidden" />
+                    </label>
+                </div> 
+            </div>
+        </div>
             <div>
-                <label for="items">Items</label>
-                <input class="border border-gray-300 block py-2 w-full" type="file" name="items" id="image"/>
-            </div>                <div>
                 <label for="items">Items</label>
                 <textarea class="border border-gray-300 block py-2 w-full" type="text" name="description" rows="4" id="items"></textarea>
             </div>
 
-                <button class="bg-blue-500 hocus:bg-blue-600">Save</button>
               </form>
 
+              <!-- form end-->
 
           </div>
+
+
+          <!--Preview part start here-->
           <div class="p-3 w-full h-[550px]  bg-gray-200 rounded-xl shadow-lg   space-x-1">
             <div  class="m-0  h-12 flex justify-center">
                 <button class="w-full h-12 rounded-none bg-white">Preview</button>
@@ -61,8 +92,9 @@
             </div>
           </div>
       </div>
+<!--preview part end-->
 
-
+      <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 
 </body>
 </html>
