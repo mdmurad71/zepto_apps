@@ -13,7 +13,7 @@
 
     <div class="p-3 grid  grid-cols-2 gap-4 mt-1">
 <!--button start here-->
-    <div class="p-3 w-full h-[600px]  bg-gray-200 rounded-xl shadow-lg   space-x-1">
+    <div class="p-3 w-full h-screen  bg-gray-200 rounded-xl shadow-lg   space-x-1">
             <div  class="m-0  h-12 flex justify-center">
                 <button class="w-full h-12 rounded-none bg-white">Components</button>
         
@@ -55,9 +55,15 @@
             <!-- </div> -->
             </div>
 
-<div>
+         <div>
             <div class="max-w-1xl mx-auto mt-3">
+                <div class="border-spacing-1 outline-4 flex justify-end">
+                    <svg class="w-6 h-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      </div>
                 <div class="flex items-t jusify-center w-full">
+ 
                     <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-44 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
                             <svg class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
@@ -69,22 +75,27 @@
                 </div> 
             </div>
             </div>
-            <!-- <div>
-                <label for="items">Items</label>
-                <textarea class="border border-gray-300 block py-2 w-full" type="text" name="description" rows="4" id="items"></textarea>
-            </div> -->
 
-            <div class="relative mt-3">
-                <textarea
-                  type="text"
-                  id="inputTextbox"
-                  class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
-                  placeholder="Start typing..."
-                  rows=""3
-                ></textarea>
-                <div id="loadingSpinner" class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                  <button type="button" class="bg-indigo-500 px-1 py-1 rounded-sm" disabled>
-                    <svg class="mr-3 h-3 w-3 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+
+            <div class="relative border-dashed border-2  w-full h-36 bg-gray-50 mt-4" >
+                <div class="border-spacing-1 outline-4 flex justify-end">
+                    <svg class="w-6 h-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      </div>
+                      <div class="p-2 m-2">
+                        <textarea
+                        type="text"
+                        id="inputTextbox"
+                        class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
+                        placeholder="Start typing..."
+                        rows="3"
+                      ></textarea>
+                      </div>
+
+                <div id="loadingSpinner" class="absolute inset-y-0 ml-4   right-0 flex items-center pr-4 pointer-events-none">
+                  <button id="spinButton" type="button" class="mt-8 py-1 mr-3 rounded-full" disabled>
+                    <svg class="mr-1 ml-1  h-3 w-3 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25 text-center" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
@@ -115,6 +126,27 @@
 <!--preview part end-->
 
       <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+
+      <script>
+        // Get references to the input textbox and loading spinner
+        const inputTextbox = document.getElementById('inputTextbox');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const spinnerButton= document.getElementById('spinButton');
+      
+        // Add an event listener to the input textbox to trigger the spinner
+        inputTextbox.addEventListener('input', () => {
+          // Toggle the display of the spinner based on the input value
+          if (inputTextbox.value.length <= 70 ) {
+            loadingSpinner.style.display = 'block';
+            spinnerButton.style.background= 'green';
+          }else if(inputTextbox.value.length > 70){
+            spinnerButton.style.background= 'red';
+
+          } else {
+            loadingSpinner.style.display = 'none';
+          }
+        });
+      </script>
 
 </body>
 </html>
