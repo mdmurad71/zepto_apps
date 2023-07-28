@@ -6,3 +6,13 @@
     display: none;
     margin-top: 4rem;
 }
+
+#headInput{
+    display: none;
+}
+#imageInput{
+    display: none;
+}
+#descInput{
+    display: none;
+}

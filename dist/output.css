@@ -804,11 +804,6 @@ video {
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 
-.bg-green-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(20 83 45 / var(--tw-bg-opacity));
-}
-
 .bg-slate-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
@@ -946,6 +941,18 @@ video {
 #loadingSpinner{
   display: none;
   margin-top: 4rem;
+}
+
+#headInput{
+  display: none;
+}
+
+#imageInput{
+  display: none;
+}
+
+#descInput{
+  display: none;
 }
 
 .hover\:bg-gray-100:hover {
