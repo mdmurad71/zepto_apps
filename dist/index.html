@@ -86,10 +86,11 @@
                       <div class="p-2 m-2">
                         <textarea
                         type="text"
-                        id="inputTextbox"
+                        id="catchDesc"
                         class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
                         placeholder="Start typing..."
                         rows="3"
+                        oninput="getDescPreview()"
                       ></textarea>
                       </div>
 
@@ -123,6 +124,10 @@
             <div class=" mt-5 h-auto">
                 <div id="getImage" class="w-full"></div>
               </div>
+
+              <div class=" mt-5 h-auto">
+                <div id="getDesc" class="w-full"></div>
+              </div>
           </div>
       </div>
 <!--preview part end-->
@@ -131,7 +136,7 @@
 
       <script>
         // Get references to the input textbox and loading spinner
-        const inputTextbox = document.getElementById('inputTextbox');
+        const inputTextbox = document.getElementById('catchDesc');
         const loadingSpinner = document.getElementById('loadingSpinner');
         const spinnerButton= document.getElementById('spinButton');
         const headButton = document.getElementById('heading');
@@ -201,7 +206,7 @@
 
         function getImagePreview(event){
 
-            let WIDTH= 300;
+            let WIDTH= 400;
 
             let img_file= event.target.files[0];
            
@@ -225,27 +230,21 @@
                     let new_image= document.createElement("img");
                     
                     new_image.src= new_image_url;
-                   document.getElementById('getImage').appendChild(new_image);
-
-                 
-
-
+                  let empty= document.getElementById('getImage');
+                  empty.innerHTML= '';
+                  empty.appendChild(new_image);
                 }
 
 
             }
-
-
-            // var image= URL.createObjectURL(event.target.files[0]);
-            // console.log(event.target.files[0])
-            // var imgDiv= document.getElementById('getImage');
-            // var imgNew= document.createElement('img');
-            // imgDiv.innerHTML= '';
-            // imgNew.src= image;
-            // imgNew.height= 100
-            // imgDiv.appendChild(imgNew);
             
 
+        }
+
+
+        function getDescPreview(){
+            let catchDesc= document.getElementById('catchDesc');
+            document.getElementById('getDesc').innerHTML= catchDesc.value;
         }
 
 
