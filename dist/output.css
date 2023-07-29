@@ -617,6 +617,10 @@ video {
   margin-top: 1rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -665,12 +669,17 @@ video {
   height: 2rem;
 }
 
-.h-\[550px\] {
-  height: 550px;
-}
-
 .h-screen {
   height: 100vh;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .w-10 {

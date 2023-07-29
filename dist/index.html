@@ -49,7 +49,7 @@
                           
                  <div class="p-3 m-3">
                     <label for="items">Heading</label>
-                    <input class="w-full bg-slate-400" type="text" name="items" id="items"/>
+                    <input id="catchHead" class="w-full bg-slate-400" type="text" name="items" oninput="headPreview()" />
                  </div>  
 
             <!-- </div> -->
@@ -70,7 +70,7 @@
                             <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                             <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                         </div>
-                        <input id="dropzone-file" type="file" class="hidden" />
+                        <input id="dropzone-file" type="file" class="hidden" onchange="getImagePreview(event)" />
                     </label>
                 </div> 
             </div>
@@ -111,16 +111,18 @@
 
 
           <!--Preview part start here-->
-          <div class="p-3 w-full h-[550px]  bg-gray-200 rounded-xl shadow-lg   space-x-1">
+          <div class="p-3 w-full h-screen bg-gray-200 rounded-xl shadow-lg   space-x-1">
             <div  class="m-0  h-12 flex justify-center">
                 <button class="w-full h-12 rounded-none bg-white">Preview</button>
         
             </div>
 
-            <div>
-              <div class="text-xl font-medium text-black">ChitChat</div>
-              <p class="text-slate-500">You have a new message!</p>
+            <div class=" mt-5">
+              <div id="getHeading" class="text-xl font-medium text-black"></div>
             </div>
+            <div class=" mt-5 h-auto">
+                <div id="getImage" class="w-full"></div>
+              </div>
           </div>
       </div>
 <!--preview part end-->
@@ -189,6 +191,66 @@
             descButton.style.display= 'block';
 
         });
+
+
+        function  headPreview (){
+            let catchHead= document.getElementById('catchHead');
+            document.getElementById('getHeading').innerHTML= catchHead.value;
+
+        }
+
+        function getImagePreview(event){
+
+            let WIDTH= 300;
+
+            let img_file= event.target.files[0];
+           
+
+            let reader= new FileReader;
+            console.log(reader);
+            reader.readAsDataURL(img_file);
+            reader.onload= (event)=>{
+                let image_url= event.target.result;
+                let image= document.createElement('img');
+                image.src= image_url;
+
+                image.onload= (e)=>{
+                    let canvas= document.createElement('canvas');
+                    let ratio= WIDTH/e.target.width;
+                    canvas.width= WIDTH;
+                    canvas.height= e.target.height *ratio;
+                    let context = canvas.getContext("2d");
+                    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+                    let new_image_url= context.canvas.toDataURL("image/jpeg", 90);
+                    let new_image= document.createElement("img");
+                    
+                    new_image.src= new_image_url;
+                   document.getElementById('getImage').appendChild(new_image);
+                   document.getElementById('getImage').appendChild('');
+
+                 
+
+
+                }
+
+
+            }
+
+
+            // var image= URL.createObjectURL(event.target.files[0]);
+            // console.log(event.target.files[0])
+            // var imgDiv= document.getElementById('getImage');
+            // var imgNew= document.createElement('img');
+            // imgDiv.innerHTML= '';
+            // imgNew.src= image;
+            // imgNew.height= 100
+            // imgDiv.appendChild(imgNew);
+            
+
+        }
+
+
+       
 
 
       </script>
