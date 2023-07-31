@@ -1028,6 +1028,10 @@ video {
   margin-top: -1.5rem;
 }
 
+#content{
+  margin-top: -1.5rem;
+}
+
 .hover\:bg-blue-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
