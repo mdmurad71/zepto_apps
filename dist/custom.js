@@ -123,3 +123,36 @@ html2canvas(document.querySelector('#content')).then((canvas) => {
 });
 
 
+
+document.getElementById('left').addEventListener('click', function(){
+    let left= document.getElementById('getHeading');
+    left.style.textAlign= 'left';
+   });
+
+   document.getElementById('center').addEventListener('click', function(){
+    let center= document.getElementById('getHeading');
+    center.style.textAlign= 'center';
+   });
+
+   document.getElementById('right').addEventListener('click', function(){
+    let right= document.getElementById('getHeading');
+    right.style.textAlign= 'right';
+   });
+
+
+   document.getElementById('blue').addEventListener('click', function(){
+    let blue= document.getElementById('getHeading');
+    blue.style.color= 'blue';
+   });
+
+   document.getElementById('black').addEventListener('click', function(){
+    let black= document.getElementById('getHeading');
+    black.style.color= 'black';
+   });
+
+   document.getElementById('green').addEventListener('click', function(){
+    let green= document.getElementById('getHeading');
+    green.style.color= 'green';
+   });
+    
+
