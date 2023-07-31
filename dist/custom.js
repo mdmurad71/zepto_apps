@@ -12,6 +12,7 @@ const imageHide = document.getElementById('image_hide');
 const descButton = document.getElementById('desc');
 const descInput = document.getElementById('descInput');
 const descHide = document.getElementById('desc_hide');
+const topButton = document.getElementById('topButton');
 
 // Add an event listener to the input textbox to trigger the spinner
 inputTextbox.addEventListener('input', () => {
@@ -30,6 +31,8 @@ inputTextbox.addEventListener('input', () => {
 headButton.addEventListener('click', ()=>{
     headInput.style.display= 'block';
     headButton.style.display= 'none';
+    // image.style.marginTop= '50%';
+    // descButton.style.marginTop= '50%';
 });
 
 headingHide.addEventListener('click', ()=>{
