@@ -16,3 +16,18 @@
 #descInput{
     display: none;
 }
+#headTop{
+    margin-top: -10px;
+    margin-left: 1rem;
+    font-size: 14px;
+}
+#posterImage{
+    margin-top: 15px;
+    margin-left: 1rem;
+    font-size: 14px;
+}
+#headDesc{
+    margin-top: -10px;
+    margin-left: 1rem;
+    font-size: 14px;
+}
