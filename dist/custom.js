@@ -38,6 +38,7 @@ headButton.addEventListener('click', ()=>{
 headingHide.addEventListener('click', ()=>{
     headInput.style.display= 'none';
     headButton.style.display= 'block';
+    document.getElementById('catchHead').value= '';
 
 });
 
@@ -61,6 +62,7 @@ descButton.addEventListener('click', ()=>{
 descHide.addEventListener('click', ()=>{
     descInput.style.display= 'none';
     descButton.style.display= 'block';
+    document.getElementById('catchDesc').value= '';
 
 });
 
