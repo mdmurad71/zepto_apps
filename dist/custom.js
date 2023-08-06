@@ -159,5 +159,30 @@ document.getElementById('left').addEventListener('click', function(){
     let green= document.getElementById('getHeading');
     green.style.color= 'green';
    });
+
+
+
+   document.getElementById('downloadButton').addEventListener('click', function() {
+    var content = document.getElementById('content').innerHTML;
+    var formData = new FormData();
+    formData.append('content', content);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'download.php', true);
+    xhr.responseType = 'blob';
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            var url = window.URL.createObjectURL(xhr.response);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'content.pdf';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    };
+    xhr.send(formData);
+});
+
     
 
